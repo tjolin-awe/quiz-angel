@@ -122,8 +122,8 @@ var filesToCache= [
   './assets/images/heavensparkle.png',
 	'./assets/fullscreen.png',
   './assets/flares.png',
+  './assets/space.png',
 	'./assets/images/frames.png',
-	'./assets/flares.png',
   './assets/images/level1.png',
 	'./assets/images/scroll.png',
   './assets/sfx/correct.mp3',
@@ -143,14 +143,17 @@ var filesToCache= [
   './assets/sfx/award.ogg',
   './assets/sfx/quiz.ogg', 
   './assets/sfx/quiz.m4a', 
-  './assets/sfx/for-the-king.mp3',
   './assets/sfx/addaward.m4a',
   './assets/sfx/addaward.mp3',
   './assets/sfx/addaward.ogg',
   './assets/purplebutton_shiney.png',
-  './assets/purplebutton.png'
-
-         
+  './assets/purplebutton.png',
+  './assets/space.json',
+  './assets/images/level1.json',
+  './assets/flares.json',
+  './assets/images/frames.json',
+  './assets/flares.json',
+  './assets/images/scroll.json'
 ];
 
 self.addEventListener('install', function(event) {

@@ -188,6 +188,7 @@ export default class MainMenu extends Phaser.Scene {
              
             ],
             'atlas': [
+                ['level1', 'assets/images/level1.png', 'assets/images/level1.json'],
                 
             ],
             'spritesheet': [

@@ -91,7 +91,7 @@ export default class Preloader extends Phaser.Scene {
 				['frames', 'assets/images/frames.png','assets/images/frames.json'],
 				['flares', 'assets/flares.png', 'assets/flares.json'],
                 ['space', 'assets/space.png', 'assets/space.json'],
-				['level1', 'assets/images/level1.png', 'assets/images/level1.json'],
+	
 				['scroll', 'assets/images/scroll.png', 'assets/images/scroll.json'],
 				
 			],
