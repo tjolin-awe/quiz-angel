@@ -15,7 +15,7 @@ EPT.Sfx = {
           EPT.Sfx.sounds['incorrect'] = game.sound.add('incorrect-sound');
           EPT.Sfx.sounds['correct'] = game.sound.add('correct-sound');
 
-          console.log(EPT.Sfx.sounds);
+         
         }
         else { // music
           EPT.Sfx.music = [];
@@ -25,8 +25,6 @@ EPT.Sfx = {
           EPT.Sfx.music['music-award'].volume = 0.5;
           EPT.Sfx.music['music-quiz'] = game.sound.add('music-quiz');
           EPT.Sfx.music['music-quiz'].volume = 0.5;
-          console.log(EPT.Sfx.music);
-
           
         }
 				break;

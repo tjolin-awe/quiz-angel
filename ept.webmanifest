@@ -1,7 +1,7 @@
 {
-    "name": "Enclave Phaser Template",
-    "short_name": "EPT",
-    "description": "Mobile template for HTML5 games created using the Phaser game engine.",
+    "name": "Quiz Angel",
+    "short_name": "QA",
+    "description": "A FREE grace-game!",
     "icons": [
         {
             "src": "icons/icon-32.png",

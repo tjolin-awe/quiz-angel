@@ -5,7 +5,7 @@ export default class MainMenu extends Phaser.Scene {
         this.bgFilesLoaded = false;
     }
     create() {
-        this.add.image(0, 0, 'background').setOrigin(0,0);
+        this.add.image(0, 0, 'background').setOrigin(0, 0);
 
 
 		EPT.Storage.initUnset('EPT-highscore', 0);
@@ -153,11 +153,8 @@ export default class MainMenu extends Phaser.Scene {
                 this.loadImage.destroy();
             }
 
-            if (EPT.Storage.get('EPT-player') === ''){
-                EPT.fadeOutScene('Character', this);
-            }else {
-                EPT.fadeOutScene('Story', this);
-            }
+            EPT.fadeOutScene('Character', this);
+            
         }
         else {
             var animationFrames = this.anims.generateFrameNumbers('loader');
@@ -176,30 +173,104 @@ export default class MainMenu extends Phaser.Scene {
     }
     startPreloadInTheBackground() {
         console.log('[EPT] Starting background loading...');
-        this.load.image('assets/clickme');
+        this.load.image('assets/ui/clickme');
         this.load.once('filecomplete', this.addFiles, this);
+       
         this.load.start();
     }
     addFiles() {
+       
         var resources = {
-            'image': [
-                
-
-             
-            ],
+			'image': [
+				
+				['heaven-castle','assets/images/heaven_castle.png'],
+				['quiz-background','assets/backgrounds/quiz.png'],
+				['overlay', 'assets/backgrounds/overlay.png'],
+                ['girl','assets/images/girl.png'],
+                ['textbox','assets/ui/textbox.png'],
+                ['textbox_edit','assets/ui/textbox_edit.png'],
+                ['helmet','assets/images/helmet.png'],
+                ['boots','assets/images/boots.png'],
+                ['belt','assets/images/belt.png'],
+                ['sword','assets/images/sword.png'],
+                ['shield','assets/images/shield.png'],
+                ['wings','assets/images/wings.png'],
+                ['halo','assets/images/halo.png'],
+                ['breastplate','assets/images/breastplate.png'],
+                ['silhouette_girl','assets/images/silhouette_girl.png'],
+                ['girl_helmet','assets/images/girl_helmet.png'],
+                ['girl_boots','assets/images/girl_boots.png'],
+                ['girl_breastplate','assets/images/girl_breastplate.png'],
+                ['girl_belt','assets/images/girl_belt.png'],
+                ['girl_sword','assets/images/girl_sword.png'],
+                ['girl_shield','assets/images/girl_shield.png'],
+                ['girl_wings','assets/images/girl_wings.png'],
+                ['girl_halo','assets/images/girl_halo.png'],
+                ['spark','assets/effects/blue.png'],
+                ['heaven','assets/backgrounds/heaven.png'],
+				['rainbow','assets/images/rainbow.png'],
+				['intro_bg','assets/backgrounds/intro.png'],
+				['shine','assets/effects/shine.png'],
+				['logos','assets/images/Logos.png'],
+				['angel_harp','assets/images/angel_harp.png'],
+				['armour_intro1', 'assets/images/armour_intro1.png'],
+				['armour_wings','assets/images/armour_wings.png'],
+				['girl_intro', 'assets/images/girl_intro.png'],
+				['glass-panel', 'assets/ui/purplebutton.png'],
+				['glass-panel-active', 'assets/ui/purplebutton_shiney.png'],
+                ['flare0','assets/effects/flare_0.png'],
+               
+				
+				
+			],
+			'spritesheet': [
+				['button-continue', 'assets/ui/button-continue.png', {frameWidth:180,frameHeight:180}],
+                ['button-mainmenu', 'assets/ui/button-mainmenu.png', {frameWidth:180,frameHeight:180}],
+                ['button-restart', 'assets/ui/button-tryagain.png', {frameWidth:180,frameHeight:180}],
+                ['button-achievements', 'assets/ui/button-achievements.png', {frameWidth:110,frameHeight:110}],
+                ['button-pause', 'assets/ui/button-pause.png', {frameWidth:80,frameHeight:80}],
+                ['button-credits', 'assets/ui/button-credits.png', {frameWidth:80,frameHeight:80}],
+                ['button-sound-on', 'assets/ui/button-sound-on.png', {frameWidth:80,frameHeight:80}],
+                ['button-sound-off', 'assets/ui/button-sound-off.png', {frameWidth:80,frameHeight:80}],
+                ['button-music-on', 'assets/ui/button-music-on.png', {frameWidth:80,frameHeight:80}],
+                ['button-music-off', 'assets/ui/button-music-off.png', {frameWidth:80,frameHeight:80}],
+                ['button-back', 'assets/ui/button-back.png', {frameWidth:70,frameHeight:70}],
+                ['column-effect', 'assets/effects/columneffect.png', {frameWidth:192, frameHeight: 192}],
+				
+				
+				['fullscreen', 'assets/ui/fullscreen.png', { frameWidth: 64, frameHeight: 64 }]
+		
+			
+			],
             'atlas': [
-                ['level1', 'assets/images/level1.png', 'assets/images/level1.json'],
-                
-            ],
-            'spritesheet': [
-                
-            ],
-            'audio': [
-            
-            ]
-        };            
+				['frames', 'assets/images/frames.png','assets/images/frames.json'],
+				['flares', 'assets/effects/flares.png', 'assets/effects/flares.json'],
+				['scroll', 'assets/images/scroll.png', 'assets/images/scroll.json'],
+              
+				
+			],
+			'json':[
+				['levels', 'assets/levels/levels.json'],
+			],
+			
+			'audio':[
+				['correct-sound', ['assets/sfx/correct.mp3','assets/sfx/correct.ogg', 'assets/sfx/correct.m4a']],
+				['incorrect-sound', ['assets/sfx/incorrect.mp3','assets/sfx/incorrect.ogg', 'assets/sfx/incorrect.m4a']],
+				['sound-click', ['assets/sfx/audio-button.m4a','assets/sfx/audio-button.mp3','assets/sfx/audio-button.ogg']],
+                ['music-theme', ['assets/music/for-the-king.m4a','assets/music/for-the-king.mp3','assets/music/for-the-king.ogg']],
+                ['music-award', ['assets/music/award.m4a','assets/music/award.mp3','assets/music/award.ogg']],
+                ['music-quiz', ['assets/music/quiz.ogg', 'assets/music/quiz.m4a', 'assets/music/quiz.mp3']],
+                ['addaward', ['assets/music/addaward.m4a','assets/music/addaward.mp3','assets/music/addaward.ogg']]
+			
+               
+			],
+		};   
+     
         for(var method in resources) {
+            
             resources[method].forEach(function(args) {
+                
+               
                 var loader = this.load[method];
                 loader && loader.apply(this.load, args);
             }, this);

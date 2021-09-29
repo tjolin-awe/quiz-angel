@@ -6,7 +6,7 @@ export default class Game extends Phaser.Scene {
 
 	preload() {
 
-		
+		this.load.atlas('level1', 'assets/images/levelchars.png', 'assets/images/levelchars.json');
 	}
 
 	shuffle(array) {
@@ -316,10 +316,7 @@ export default class Game extends Phaser.Scene {
 		this.infoText.setFontSize(this.level.quiz[this.currentQuestion].info_fontsize);
 		this.infoText.setText(this.level.quiz[this.currentQuestion].additional_info);
 		this.infoText.setAlpha(0);
-		console.log(this.level.quiz[this.currentQuestion]);
-
-		
-		console.log(`Current Question ${this.currentQuestion}`);
+	
 		let i = 0;
 
 		
@@ -504,8 +501,7 @@ export default class Game extends Phaser.Scene {
 
 	this.particlesscroll = this.add.particles('flare0');
 	this.scroll = this.add.sprite(EPT.world.centerX,780).setOrigin(0.5,0.5);
-		this.allcharacters = this.cache.json.get('characters');
-
+		
 
 
 		this._gamePaused = false;

@@ -1,7 +1,32 @@
 
+var enablePWA = true;
+if(enablePWA) {
+	// SERVICE WORKER
+	if('serviceWorker' in navigator) {
+		navigator.serviceWorker.register('/sw.js',{scope:'/'});
+	};
+	
+	
+	// NOTIFICATIONS TEMPLATE
+	Notification.requestPermission().then(function(result) {
+		if(result === 'granted') {
+			//exampleNotification();
+		}
+	});
+	function exampleNotification() {
+		var notifTitle = 'Quiz Angel';
+		var notifBody = 'Created by Spirit Filled Games & Christian Illustrations.';
+		var notifImg = 'img/icons/icon-512.png';
+		var options = {
+			body: notifBody,
+			icon: notifImg
+		}
+		var notif = new Notification(notifTitle, options);
+		setTimeout(exampleNotification, 30000);
+	}
+}
 
-
-import Phaser from './phaser.3.55.0.min'
+import Phaser from 'phaser'
 import Boot from './Boot'
 import Preloader from './Preloader'
 import MainMenu from './MainMenu'
